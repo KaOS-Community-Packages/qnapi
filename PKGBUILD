@@ -17,9 +17,11 @@ build() {
 
 package() {
     cd "${srcdir}/${pkgname}-${pkgver}"
-    make -j2
+    make
     make INSTALL_ROOT="${pkgdir}/" install
     mkdir -p ${pkgdir}/usr/share/kservices5/ServiceMenus/
-    mv ${pkgdir}/usr/share/doc/${pkgname}/${pkgname}-scan.desktop                  ${pkgdir}/usr/share/kservices5/ServiceMenus/${pkgname}-scan.desktop 
-    mv ${pkgdir}/usr/share/doc/${pkgname}/${pkgname}-download.desktop              ${pkgdir}/usr/share/kservices5/ServiceMenus/${pkgname}-download.desktop
+    mv ${pkgdir}/usr/share/doc/${pkgname}/${pkgname}-scan.desktop  \
+        ${pkgdir}/usr/share/kservices5/ServiceMenus/${pkgname}-scan.desktop 
+    mv ${pkgdir}/usr/share/doc/${pkgname}/${pkgname}-download.desktop  \
+        ${pkgdir}/usr/share/kservices5/ServiceMenus/${pkgname}-download.desktop
 }
